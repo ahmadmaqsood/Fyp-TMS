@@ -24,9 +24,21 @@ export const items = [
     icon: <UserOutlined />,
     label: 'Master User',
     children: [
-      { key: getRandomId(), label: 'Admin & Staff', id: '1' },
-      { key: getRandomId(), label: 'Supplier', id: '2' },
-      { key: getRandomId(), label: 'Customer', id: '3' },
+      {
+        key: getRandomId(),
+        label: <Link to='/adminstaff' className='text-decoration-none'>Admin&Staff</Link>,
+        id: '1'
+      },
+      {
+        key: getRandomId(),
+        label: <Link to='/supplier' className='text-decoration-none'>Supplier</Link>,
+        id: '2'
+      },
+      {
+        key: getRandomId(),
+        label: <Link to='/customer' className='text-decoration-none'>Customer</Link>,
+        id: '3'
+      },
     ],
   },
   {

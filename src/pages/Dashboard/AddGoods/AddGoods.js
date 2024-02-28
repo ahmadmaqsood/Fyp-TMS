@@ -19,7 +19,6 @@ export default function AddGoods() {
                     <button className='bg-green-500 text-white rounded-md px-4 py-2   hover:text-green-500 hover:bg-transparent hover:border-2 hover:border-green-500 '>Add Data</button>
                     <button className='bg-red-500 text-white  rounded-md px-3 py-2 mx-2  hover:text-red-500 hover:bg-transparent hover:border-2 hover:border-red-500' >Cancel</button>
                 </div>
-
             </div>
         </div>
     )

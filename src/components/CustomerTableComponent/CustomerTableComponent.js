@@ -3,9 +3,10 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import CachedIcon from '@mui/icons-material/Cached';
 import AddIcon from '@mui/icons-material/Add';
-import { clothdata } from './clothdata';
+import { customerdata } from './customerdata';
 import { Link } from 'react-router-dom';
-export default function TableComponent(props) {
+export default function CustomerTablecomponent(props) {
+
     return (
         <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
             <div class="pb-4 bg-white dark:bg-gray-900 flex items-center ms-11 my-3">
@@ -23,14 +24,13 @@ export default function TableComponent(props) {
                         <label for="countries" class="w-full mb-2 text-sm font-medium text-gray-900 dark:text-white">Select By</label>
                         <select id="countries" class="bg-gray-50  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 mx-2 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                             <option value="US">Name</option>
-                            <option value="CA">Color</option>
-                            <option value="FR">Type</option>
-                            <option value="DE">Stock</option>
+                            <option value="FR">Address</option>
+                            <option value="DE">Mobile</option>
                         </select>
                     </div>
                     <div>
                         <Link className='bg-green-500  p-2 rounded-lg hover:text-white text-white'><CachedIcon /></Link>
-                        <Link to="/add-goods" className='bg-green-500  mx-1 p-2 hover:text-white rounded-lg text-white' ><AddIcon /></Link>
+                        <Link to="/add-customer" className='bg-green-500  mx-1 p-2 hover:text-white rounded-lg text-white' ><AddIcon /></Link>
                     </div>
                 </div>
 
@@ -45,30 +45,24 @@ export default function TableComponent(props) {
                             </div>
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            Fabric Name
+                            Full Name
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            Item Type
+                            Address
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            Color
+                            Number
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            Count/Const
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            Width
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            Unit
+                            Date
                         </th>
                         <th scope="col" class="px-6 py-3">
                             Action
                         </th>
                     </tr>
                 </thead>
-                <tbody>
-                    {clothdata.map((cloth, i) => {
+                <tbody >
+                    {customerdata.map((customer, i) => {
                         return <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600" key={i}>
                             <td class="w-4 p-4">
                                 <div class="flex items-center">
@@ -77,23 +71,18 @@ export default function TableComponent(props) {
                                 </div>
                             </td>
                             <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                {cloth.fabric_name}
+                                {customer.fullname}
                             </th>
                             <td class="px-6 py-4">
-                                {cloth.fabric_type}
+                                {customer.address}
                             </td>
                             <td class="px-6 py-4">
-                                {cloth.color}
+                                {customer.number}
                             </td>
                             <td class="px-6 py-4">
-                                {cloth.count_construction}
+                                {customer.date}
                             </td>
-                            <td class="px-6 py-4">
-                                {cloth.width}
-                            </td>
-                            <td class="px-6 py-4">
-                                {cloth.stock}
-                            </td>
+
                             <td class="px-6 py-4">
                                 <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline"><EditIcon /></a>
                                 <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline"><DeleteIcon /></a>
